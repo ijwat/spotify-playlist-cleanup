@@ -1,3 +1,6 @@
+"""Spotify Playlist Duplicate Removal"""
+
+
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -61,7 +64,7 @@ def delete_duplicate_tracks(playlist_id):
         print(f"Track {idx+1}: {track_name} ({track_uri})")
 
         if track_uri in track_uris:
-            duplicate_tracks.append(track_uri)  # Changed to append only the URI, not a dict
+            duplicate_tracks.append(track_uri)  
             print(f"Duplicate found: {track_name} ({track_uri})")
         else:
             track_uris.add(track_uri)
@@ -76,5 +79,5 @@ def delete_duplicate_tracks(playlist_id):
     else:
         print("No duplicate tracks found.")
 
-# Call the function to delete duplicate tracks
+# Call the function 
 delete_duplicate_tracks(playlist_id)
