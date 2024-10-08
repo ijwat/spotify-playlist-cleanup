@@ -1,4 +1,4 @@
-"""Spotify Playlist Duplicate Removal"""
+"""Spotify Playlist Duplicate Removal."""
 
 
 import spotipy
@@ -69,7 +69,7 @@ def delete_duplicate_tracks(playlist_id):
         else:
             track_uris.add(track_uri)
 
-    # Batch process duplicates removal (100 tracks max per API call)
+    # Batch removal (100 tracks per API call)
     if duplicate_tracks:
         batch_size = 100
         for i in range(0, len(duplicate_tracks), batch_size):
